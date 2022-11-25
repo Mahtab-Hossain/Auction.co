@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Contracts\Session\Session;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,4 +16,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('login');
+});
+Route::get('/logout',function(){
+    Session::forget('user');
+    return redirecct('login');
 });

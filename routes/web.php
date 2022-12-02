@@ -2,6 +2,8 @@
 
 use Illuminate\Contracts\Session\Session;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,7 +15,11 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
+// login route
+Route::get('/login', function () {
     return view('login');
 });
+// logout route
+
+Route::post("/login",[UserController::class,'login']);;
+

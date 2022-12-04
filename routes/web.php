@@ -21,5 +21,6 @@ Route::get('/login', function () {
 });
 // logout route
 
-Route::post("/login",[UserController::class,'login']);;
+Route::post("/login", [UserController::class,'login']);
+Route::get("/", [BidController::class,'index']);
 
